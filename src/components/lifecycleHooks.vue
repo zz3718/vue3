@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    
+    <button @click="emitClick()">向父组件传值</button>
   </div>
 </template>
 
@@ -21,6 +21,14 @@ export default {
     onUnmounted(() => {
       console.log('unmounted!')
     })
+
+    function emitClick() {
+        console.log('pppp')
+        this.$emit('handle', '传出去的值')
+    }
+    return {
+        emitClick
+    }
   }
 }
 </script>

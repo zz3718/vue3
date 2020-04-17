@@ -4,7 +4,8 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     App.vue中的count：{{count}}
     <WatchEffect title="父组件传的值"/>
-    <lifecycleHooks/>
+    <lifecycleHooks @handle="handleClick"/>
+   自组件传来的值： {{val1}}
   </div>
 </template>
 
@@ -12,7 +13,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import WatchEffect from './components/watchEffect.vue'
 import lifecycleHooks from './components/lifecycleHooks.vue'
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 
 export default {
   name: 'App',
@@ -23,8 +24,19 @@ export default {
   },
   setup() {
     const count = ref(0)
+    let val1 = ref('')
+    let vals = reactive({
+      name: 'zhansgan'
+    })
+    function handleClick(val) {
+      val1.value = val
+      console.log(val1)
+      console.log(vals)
+    }
     return {
-      count
+      count,
+      handleClick,
+      val1
     }
   }
 }
