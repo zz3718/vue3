@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    {{count}}
+    App.vue中的count：{{count}}
   </div>
 </template>
 
@@ -17,7 +17,6 @@ export default {
   },
   setup() {
     const count = ref(0)
-
     return {
       count
     }
