@@ -3,17 +3,23 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     App.vue中的count：{{count}}
+    <WatchEffect title="父组件传的值"/>
+    <lifecycleHooks/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import WatchEffect from './components/watchEffect.vue'
+import lifecycleHooks from './components/lifecycleHooks.vue'
 import { ref } from 'vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    WatchEffect,
+    lifecycleHooks
   },
   setup() {
     const count = ref(0)
